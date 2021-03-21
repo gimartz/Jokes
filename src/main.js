@@ -14,8 +14,9 @@ import { Component } from 'react';
 const MyForm = (props) => {
  //Splitting();
 	// Declare a state variable 
+  
   const { budget} =
-  (props.location && props.location.state) || {};
+  (props.location  && props.location.state) || {};
   
 	const [Joke, setJoke] = React.useState(""); 
  

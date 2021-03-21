@@ -61,21 +61,18 @@ function App() {
 						<label class="for-checkbox-budget" for="budget-6">							
 							<span data-hover="Pun">Pun</span>
 						</label>
-            <Router>
-        <Switch>
+           
             <div class="col-12 pb-5 login-box">    <span>&nbsp;</span>
       <span>&nbsp;</span>	<LinkButton     to={{
             pathname: "main",role:'button',
-            state 
+            state
           }}
           onClick={(event) => {
             console.log('custom event here!', event)}}
           
           >Push My Buttons!</LinkButton>
       <span>&nbsp;</span>
-      <span>&nbsp;</span>	</div>   <Route path="/main" component={MyForm} />
-        <Route path="/Jokescentral" component={Jokes} />    </Switch>
-      </Router> <footer> <div class="bg-light py-4">
+      <span>&nbsp;</span>	</div>    <footer> <div class="bg-light py-4">
       <div className="container text-center">
         <p className="text-muted mb-0 py-2">© 2021 Gimartz All rights reserved.</p>
       </div>
