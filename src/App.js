@@ -3,6 +3,7 @@ import'./jokes.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import MyForm from './main';import Jokes from './jokes';
 import React,{useState } from 'react';
+import LinkButton from './link'
 function App() {
  
     const [state, setState] = useState({
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       
+       <head>Jokescentral</head>
       </header>
       <div className="login-box">
   <h2><i>Hello There!</i></h2>
@@ -33,7 +34,7 @@ function App() {
 				<div class="row justify-content-center pb-5">
 					
 					<div class="col-12 pt-1">
-						<p class="mb-4 pb-2">Let's hear a joke</p>
+						<p class="mb-4 pb-2">Click to switch page theme</p>
 					</div>
 					<div class="col-xl-10 pb-5">
           <input class="checkbox-budget" type="radio" name="budget" onChange={handleInputChange} id="budget-1" value="Any" />
@@ -63,17 +64,22 @@ function App() {
             <Router>
         <Switch>
             <div class="col-12 pb-5 login-box">    <span>&nbsp;</span>
-      <span>&nbsp;</span>	
-      <Link
-         
-          to={{
-            pathname: "main",className:'login-box',
-            state
+      <span>&nbsp;</span>	<LinkButton     to={{
+            pathname: "main",role:'button',
+            state 
           }}
-        >Submit     </Link>  <span>&nbsp;</span>
+          onClick={(event) => {
+            console.log('custom event here!', event)}}
+          
+          >Push My Buttons!</LinkButton>
+      <span>&nbsp;</span>
       <span>&nbsp;</span>	</div>   <Route path="/main" component={MyForm} />
         <Route path="/Jokescentral" component={Jokes} />    </Switch>
-      </Router>
+      </Router> <footer> <div class="bg-light py-4">
+      <div className="container text-center">
+        <p className="text-muted mb-0 py-2">© 2021 Gimartz All rights reserved.</p>
+      </div>
+    </div></footer>
 					</div>
 				
 				
@@ -81,11 +87,7 @@ function App() {
 			</div>	
 		</div>
 	</div>
-		 <footer> <div class="bg-light py-4">
-      <div className="container text-center">
-        <p className="text-muted mb-0 py-2">© 2021 Gimartz All rights reserved.</p>
-      </div>
-    </div></footer>
+		
 
   </form>
   </div>
