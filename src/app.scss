@@ -1,0 +1,147 @@
+#checklist {
+    --background: #ffffff;
+    --text: #414856;
+    --check: #4F29F0;
+    --disabled: #C3C8DE;
+    --width: 100px;
+    --height: 140px;
+    --border-radius: 10px;
+    background: var(--background);
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(#414856, 0.05);
+    padding: 30px 45px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    label {
+      color: var(--text);
+      position: relative;
+      cursor: pointer;
+      display: grid;
+      align-items: center;
+      width: fit-content;
+      transition: color .3s ease;
+      &::before,
+      &::after {
+        content:"";
+        position: absolute;
+      }
+      &::before {
+        height: 2px;
+        width: 8px;
+        left: -27px;
+        background: var(--check);
+        border-radius: 2px;
+        transition: background .3s ease; 
+      }
+      &:after {
+        height: 4px;
+        width: 4px;
+        top: 8px;
+        left: -25px;
+        border-radius: 50%;
+      }
+    }
+    input[type="checkbox"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      position: relative;
+      height: 15px;
+      width: 15px;
+      outline: none;
+      border: 0;
+      margin: 0 15px 0 0;
+      cursor: pointer;
+      background: var(--background);
+      display: grid;
+      align-items: center;
+      &::before,
+      &::after {
+        content:"";
+        position: absolute;
+        height: 2px;
+        top: auto;
+        background: var(--check);
+        border-radius: 2px;
+      }
+      &::before {
+        width: 0px;
+        right: 60%;
+        transform-origin: right bottom;
+      }
+      &::after {
+        width: 0px;
+        left: 40%;
+        transform-origin: left bottom;
+      }
+      &:checked {
+        &::before {
+          animation: check-01 .4s ease forwards;
+        }
+        &::after {
+          animation: check-02 .4s ease forwards;
+        }
+        + label {
+          color: var(--disabled);
+          animation: move .3s ease .1s forwards;
+          &::before {
+            background: var(--disabled);
+            animation: slice .4s ease forwards;
+          }
+          &::after {
+            animation: firework .5s ease forwards .1s;
+          }
+        }
+      }
+    }
+  }
+  $white: #FCFCFC;
+$gray: #CBCDD3;
+$dark: #777777;
+$error: #EF8D9C;
+$orange: #FFC39E;
+$success: #B0DB7D;
+$secondary: #99DBB4;
+  @keyframes move {
+    50% {
+      padding-left: 8px;
+      padding-right: 0px;
+    }
+    100% {
+      padding-right: 4px;
+    }
+  }
+  @keyframes slice {
+    60% {
+      width: 100%;
+      left: 4px;
+    }
+    100% {
+      width: 100%;
+      left: 12px;
+      padding-left: 0;
+    }
+  }
+  #Jcontainer {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 700px;
+    height: 250px;
+  }
+  
+.green {
+  color: darken($secondary, 20%);
+}
+
+.red {
+  color: darken($error, 10%);
+}
+
+.alert {
+  font-weight: 700;
+  letter-spacing: 5px;
+}
