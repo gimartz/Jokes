@@ -1,56 +1,37 @@
 import React,{useState } from 'react';
 import ReactDOM from 'react-dom';
 import './jokes.css';
-import { NavLink } from "react-router-dom";
+//import * as admin from 'firebase-admin';
+//admin.initializeApp(functions.config().firebase);//
+//firebase deploy --only hosting,storage
 
+//export const myFirstCloudFun= functions.database.ref('/users/{userId}').onWrite(async (event, context) =>{
+ // const user= event.after.val()
+ // const name = user.name
+ // const token = user.token
+ // const payload = {
+       //      notification: {
+        //       title: 'Hi '+ name,
+        //       body: 'Welcome to our first cloud function App' ,
+     //          sound : "default"
+     ////        }
+       //    };
+  //return admin.messaging().sendToDevice(token, payload)
+     //      .then(function(response){
+      //         console.log("Successfully message is sent:", response);
+     //      console.log(response.results[0].error);})
+     //      .catch(function(error) {
+     //        console.log("Error while sending message:", error);
+    //     }
+     //)
+  
+ // })
 
-
-  const Jokes = props => {
+ const Jokes = (props) => {return (    <div className="App">
+ <header className="App-header">
+  
+ </header></div>
  
-      const { username, city, phone, subCat2 } =
-        (props.location && props.location.state) || {};
-      const [Joke, setJoke] = React.useState("");
-    const url = new URL("https://sv443.net/jokeapi/v2/joke/"+subCat2);
-    
-    var search_params = url.searchParams;
-    
-    // add "single" parameter
-    search_params.set('type','single');
-    
-    url.search = search_params.toString();
-    
-    var new_url = url.toString();
-    console.log(new_url);
-      const fetchSingle = () => {
-        // Fetching data from the API
-        fetch(new_url)
-          .then((res) => res.json())
-          .then((data) => setJoke(data.joke));
-      };
-      return (
-        <div>  
-          <div className="form-details">
-            <div>
-              <button href="" onClick={fetchSingle}>
-                joke
-              </button>
-              <p>{Joke}</p>
-              <strong>Username:</strong> {username}
-            </div>
-            <div>
-              <strong>Email:</strong> {subCat2}
-            </div>
-            <div>
-              <strong>City:</strong> {city}
-            </div>
-            <div>
-              <strong>Phone:</strong> {phone}
-            </div>
-          </div>
-        </div>
-      );
-    };
-    
-    
-  ReactDOM.render(<Jokes />, document.getElementById('root'));
-export default Jokes;
+ )}
+ ReactDOM.render(<Jokes />, document.getElementById('root'));
+ export default Jokes;

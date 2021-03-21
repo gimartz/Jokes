@@ -1,4 +1,4 @@
-$colors: #F0F0D8,   #d8ce95, #ff7979, #1abc9c, #e74c3c, #f8c291;
+$colors: #F0F0D8,   #d8ce95,  #F0F0D8, #1abc9c, #e74c3c, #f8c291;
 
 * {
   box-sizing: border-box;
@@ -309,11 +309,11 @@ font-size: 20px;
 line-height: 20px;
 text-transform: uppercase;
 letter-spacing: 2px;
-color: #fff;
+color: rgb(24, 15, 15);
 transition : all 0.3s ease-out;
 }
 .logo-wrap a span{ 
-color: #8167a9;
+color: #7e793a;
 }
 .logo-wrap a:hover {
 opacity: 0.9;

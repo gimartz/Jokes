@@ -27,7 +27,7 @@
 	-o-transform: translateX(-190%);
 	transition-delay: .4s !important;
   }
-  
+
   #t2:target #p1, 
   #t3:target #p1,
   #t4:target #p1,

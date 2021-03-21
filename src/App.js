@@ -81,7 +81,7 @@ function App() {
 			</div>	
 		</div>
 	</div>
-  <footer> <div class="bg-light py-4">
+		 <footer> <div class="bg-light py-4">
       <div className="container text-center">
         <p className="text-muted mb-0 py-2">© 2021 Gimartz All rights reserved.</p>
       </div>
@@ -89,7 +89,7 @@ function App() {
 
   </form>
   </div>
-	<a href="https://front.codes" class="link-to-page" target="_blank"><img src="https://assets.codepen.io/1462889/fcy.png" alt=""/></a>
+	<a href="https://gimartz.com" class="link-to-page" ><img src="https://assets.codepen.io/1462889/fcy.png" alt=""/></a>
  
  
 

@@ -3,13 +3,12 @@ import './app.scss';import'./joke.scss';
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 //import Splitting from "splitting";
-
+// 'react-jquery-plugin';import $ from 'jquery'
 import React from "react";  
 import Single from "./single"; 
 import Random from "./random"; 
 import Bon from "./Twopart";
-
-
+import { Component } from 'react';
 
 // Create a functional component 
 const MyForm = (props) => {
@@ -94,41 +93,37 @@ const MyForm = (props) => {
 	return ( 
 		// Return the Button Component with a conditional statement 
     
-    <div className="login-box"><header class="cd-header">
-		<div class="header-wrapper">
-			<div class="logo-wrap">
-				<a href="#" class="hover-target"><span>your</span>Jokes</a>
+    <div className="login-box"><header className="cd-header">
+		<div className="header-wrapper">
+			<div className="logo-wrap">
+				<a href="./" className=" fon hover-target"><span></span>Go Back Home</a>
 			</div>
-			<div class="nav-but-wrap">
+			<div className="nav-but-wrap">
 				<div class="menu-icon hover-target">
-					<span class="menu-icon__line menu-icon__line-left"></span>
-					<span class="menu-icon__line"></span>
-					<span class="menu-icon__line menu-icon__line-right"></span>
+					<span className="menu-icon__line menu-icon__line-left"></span>
+					<span className="menu-icon__line"></span>
+					<span className="menu-icon__line menu-icon__line-right"></span>
 				</div>					
 			</div>					
 		</div>				
-	</header>
-<main class="container">
-
-
-	<div class="nav">
-		<div class="nav__content">
-			<ul class="nav__list">
-				<li class="nav__list-item active-nav"><a href="#" class="hover-target">Home</a></li>
-				<li class="nav__list-item"><a href="#" class="hover-target">Portfolio</a></li>
-				<li class="nav__list-item"><a href="#" class="hover-target">Studio</a></li>
-				<li class="nav__list-item"><a href="#" class="hover-target">News</a></li>
-				<li class="nav__list-item"><a href="#" class="hover-target">Contact</a></li>
+	</header><div className="nav">
+		<div className="nav__content">
+			<ul className="nav__list">
+				<li className="nav__list-item active-nav"><a href="#" className="hover-target">Home</a></li>
+				<li className="nav__list-item"><a href="https://github.com/gimartz/" className="hover-target">Github Profile</a></li>
 			</ul>
 		</div>
-	</div>		
+	</div>
+<main class="container">
+
+<h1 className=" fon ">{budget}</h1>
+			
 
   <h2 data-splitting className="headline fon headline--jump"> {Joke}
-  <Random callApi={fetchApi} />{budget}
+  <Random callApi={fetchApi} /><br></br><Bon callApi={fetchpart} /><br></br><Single callApi={fetchSingle} /> <br></br>
 </h2>
 
-  <h2 data-splitting className="fon headline headline--jog"> <Bon callApi={fetchpart} /><br></br><Single callApi={fetchSingle} /> 
-  </h2> 
+  
   
 <footer> <div class="bg-light py-4">
       <div class="container text-center">
